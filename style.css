@@ -1,0 +1,225 @@
+html {
+    font-size: 16px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    min-height: 100vh;
+    font-family: "DM Sans", sans-serif;
+    background: rgb(196, 246, 255);
+    background: linear-gradient(90deg,
+            rgba(196, 246, 255, 1) 0%,
+            rgba(244, 191, 252, 1) 50%,
+            rgba(233, 220, 142, 1) 100%);
+    margin: 0;
+    z-index: 1;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(125%);
+        opacity: 0.2;
+    }
+
+    to {
+        transform: translateY(0%);
+        opacity: 1;
+    }
+}
+
+h2 {
+    margin: 0;
+}
+
+/* CUSTOM TITLE CLASS */
+.title {
+    display: flex;
+    justify-content: center;
+    width: 75%;
+    font-size: 2.5rem;
+    padding: 1.5rem 0;
+}
+
+/* CUSTOM BUTTON CLASS */
+.przycisk {
+    background: #07a6e6;
+    font: 500 clamp(0.75rem, 0.6923rem + 0.2564vw, 1rem) "DM Sans", sans-serif;
+    color: #fff;
+    padding: 0.65rem 1rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.przycisk:hover {
+    background: #089eda;
+}
+
+.przycisk:active {
+    box-shadow: 0 0 6px 2px #e1e1e1;
+}
+
+/* MAIN CONTAINERS */
+.to-do-form,
+.zadania-container {
+    width: 75%;
+    background: #fff;
+    border-radius: 20px;
+    padding: 2rem clamp(1.5rem, 1.1538rem + 1.5385vw, 3rem);
+}
+
+/* FORM CONTAINER */
+.to-do-form {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 2rem;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.to-do-form h3 {
+    font-size: 1.75rem;
+    margin: 0;
+}
+
+#tresc-zadania {
+    height: 20px;
+    min-width: 275px;
+    font: 400 1rem "DM Sans", sans-serif;
+    padding: 0.9rem;
+    border: unset;
+    border-radius: 20px;
+    box-shadow: 0 0 8px -1px #e1e1e1;
+}
+
+#tresc-zadania::placeholder {
+    font: 400 1rem "DM Sans", sans-serif;
+    color: #000;
+    opacity: 1;
+}
+
+/* TASK LIST CONTAINER */
+.zadania-container {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    margin: 2rem 0;
+}
+
+.zadania-container>.title {
+    font-size: 2rem !important;
+    align-self: center;
+}
+
+.zadania-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.zadania {
+    display: flex;
+    justify-content: space-between;
+    box-shadow: 0 0 30px -1px #eee;
+    padding: 1rem;
+    border-radius: 15px;
+}
+
+.zadania p {
+    display: flex;
+    align-items: center;
+    flex: 1;
+    font-size: clamp(1rem, 0.9423rem + 0.2564vw, 1.25rem);
+    margin-left: 1rem;
+    cursor: pointer;
+}
+
+.zadania p:hover {
+    color: #0d5581;
+}
+
+.lista-animacja {
+    animation: slideIn 0.5s;
+}
+
+/* TASK VIEW */
+.task-view-container {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: #000000aa;
+    z-index: 2;
+}
+
+.task-view-container.active {
+    display: grid;
+}
+
+.task-view {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    place-self: center;
+    background: #fff;
+    width: 70%;
+    height: 40vh;
+    position: absolute;
+    padding: 1rem 1.5rem;
+    border-radius: 25px;
+}
+
+.tv-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tv-top h3 {
+    font-size: 2rem;
+}
+
+.close-task-view {
+    cursor: pointer;
+    transition: all 0.15s linear;
+}
+
+.close-task-view:hover {
+    scale: 1.075;
+}
+
+.tv-content {
+    margin-top: 1rem;
+}
+
+/* RWD */
+@media screen and (max-width: 768px) {
+
+    /* MAIN CONTAINERS */
+    .to-do-form,
+    .zadania-container {
+        width: 80%;
+    }
+
+    /* TASK LIST CONTAINER */
+    .zadania {
+        padding: .75rem;
+    }
+
+    .zadania p {
+        margin-left: 0;
+    }
+
+    .zadania .przycisk {
+        padding: .5rem .75rem;
+        margin-right: 0 !important;
+    }
+}

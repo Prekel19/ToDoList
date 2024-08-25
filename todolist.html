@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list</title>
+    <link href="https://fonts.googleapis.com/css?family=DM+Sans:100,200,300,regular,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="reset.css">
+</head>
+<body>
+    <div class="title">
+        <h2>To do list</h2>
+    </div>
+    <div class="to-do-form">
+        <h3>Zadanie</h3>
+        <input type="text" id="tresc-zadania" placeholder="Wpisz treść zadania">
+        <div class="action-buttons">
+            <input type="button" class="przycisk" id="dodaj-zadanie" value="Dodaj do listy">
+            <input type="button" class="przycisk" id="usun-zadania" value="Usuń wszystkie zadania">
+        </div>
+    </div>
+    <div class="zadania-container">
+        <div class="title">
+            <h2>Lista zadań</h2>
+        </div>
+        <div class="zadania-lista">
+        </div>
+    </div>
+    <div class="task-view-container">
+        <div class="task-view">
+            <div class="tv-top">
+                <h3>Task</h3>
+                <span class="close-task-view" onClick="closeTaskView()">
+                    <img src="xmark-solid.svg" alt="Zamknij" height="37" width="25">
+                </span>
+            </div>
+            <div class="tv-content">
+                <p class="tv-text"></p>
+            </div>
+        </div>
+    </div>
+    <script src="todolist.js"></script>
+</body>
+</html>
